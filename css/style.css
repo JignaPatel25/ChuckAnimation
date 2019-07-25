@@ -1,0 +1,22 @@
+
+h1{
+  color: white;font-size: 1.5em;text-align: center;text-decoration: underline;
+}
+footer{
+  color:white;text-indent: inherit;text-align: right;
+}
+.work{
+  color: orange;text-decoration: underline;
+}
+body {
+  background-color: gray;text-align: center;font-family: 'Cute Font', cursive;
+}
+.link{
+  color:yellow;
+}
+a:hover {
+  background-color: yellow;
+}
+body {
+  font-size: 2em;
+}
