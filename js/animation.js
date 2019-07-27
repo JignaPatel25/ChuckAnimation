@@ -10,6 +10,12 @@ chuck:{
 
 }
 
+cloud: {
+  xPos:200,
+  yPos:100,
+  size: 50,
+}
+};
 
 
 
@@ -24,6 +30,7 @@ function drawBackground(){
   ctx.drawImage(plainBackground,0,0,canvas.width,canvas.height);
   console.log();
 }
+
 
 
 
@@ -62,9 +69,10 @@ window.addEventListener("keydown", function (event) {
 
 
 
-// function resizeCanvas() {
-//    canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-//    canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-//    WIDTH = canvas.width;
-//    HEIGHT = canvas.height;
-// }
+ function drawCloud() {
+  var cloud = document.querySelector("#Cloud");
+  ctx.drawImage(cloud,state.cloud.xPos,state.cloud.yPos,state.cloud.size, state.cloud.size);
+  console.log("cloud");
+};
+
+drawCloud();
