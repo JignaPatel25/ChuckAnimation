@@ -1,20 +1,3 @@
-var state = {
-chuck:{
-  xPos:100,
-  yPos:500,
-  size: 50,
-},
-cloud: {
-  xPos:200,
-  yPos:100,
-  size: 50,
-},
-lightning:{
-  xPos: 400,
-  yPos:400,
-  size:80,
-}
-};
 
 
 var canvas = document.querySelector("canvas");
@@ -22,6 +5,49 @@ var ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+
+
+
+var state = {
+chuck:{
+  xPos:100,
+  yPos:500,
+  size: 50,
+},
+clouds:[],
+};
+
+var cloud1 = {
+  xPos:100,
+  yPos:350,
+  size:170,
+}
+
+var cloud2 = {
+  xPos:750,
+  yPos:250,
+  size:170,
+}
+
+var cloud3 = {
+  xPos:100,
+  yPos:80,
+  size:170,
+}
+
+var lightning = {
+  xPos:400,
+  yPos:280,
+  size:200,
+}
+
+var lightning2 = {
+  xPos:500,
+  yPos:50,
+  size:200,
+}
+
+state.clouds = [cloud1,cloud2,cloud3,lightning,lightning2]
 
 function drawBackground(){
   var plainBackground = document.querySelector("#background");
@@ -34,29 +60,41 @@ function drawCharacter(){
   ctx.drawImage(character,state.chuck.xPos,state.chuck.yPos,state.chuck.size, state.chuck.size);
 }
 
-function drawCloud() {
- var cloud = document.querySelector("#Cloud");
- ctx.drawImage(cloud,state.cloud.xPos,state.cloud.yPos,state.cloud.size, state.cloud.size);
- console.log("cloud");
-};
+function drawCloud(){
+var clouds = document.querySelector("#Cloud");
+for (var i = 0; i < state.clouds.length; i = i + 1) {
 
+    var whiteCloud = state.clouds[i];
+ctx.drawImage(clouds, whiteCloud.xPos, whiteCloud.yPos, whiteCloud.size, whiteCloud.size)
+}
+}
 
-function drawLightning() {
-var cloud = document.querySelector("#lightning");
-ctx.drawImage(cloud,state.lightning.xPos,state.lightning.yPos,state.lightning.size, state.lightning.size);
-console.log("lightning");
-};
-
+// function chuckmeetCloud() {
+//       for (var i = 0; i < state.clouds.length; i = i + 1) {
+//         var cloud = state.clouds[i];
+//         console.log(cloud.yPos);
+//         if (cloud.yPos <= state.Chuck.yPos + state.Chuck.size &&
+//           state.Chuck.yPos <= cloud.yPos + cloud.size &&
+//           cloud.xPos <= state.Chuck.xPos + state.Chuck.size &&
+//           state.Chuck.xPos <= cloud.xPos + cloud.size){
+//             console.log("meet")
+//           }
+//         }
+//       }
 
   function animate() {
     drawBackground();
     drawCloud();
-    drawLightning();
     drawCharacter();
-
-    }
+    // chuckmeetCloud();
+  }
     animate();
- setInterval(animate, 40);
+   setInterval(animate, 40);
+
+
+
+//StartGameEngine(canvas, config, runGame);
+
 
 window.addEventListener("keydown", function (event) {
   console.log("pressed a key: " + event.key);
