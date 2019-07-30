@@ -20,14 +20,14 @@ body {
 } */
 
 body {
-  background-color: lightblue;text-align: center;font-family: 'Cute Font', cursive;
+  background-color: lightblue;
 }
 
 
 
 h1{
   color: #0075A3; font-size: 5em; text-align: centre;
-  font-family: 'Londrina Shadow', cursive;
+  font-family: 'Londrina Shadow';
   padding-top: 80px;
   text-align: center;
 }
