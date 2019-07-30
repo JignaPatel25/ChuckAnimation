@@ -20,7 +20,7 @@ clouds:[],
 var cloud1 = {
   xPos:100,
   yPos:350,
-  size:170,
+  size:120,
 }
 
 var cloud2 = {
@@ -69,24 +69,23 @@ ctx.drawImage(clouds, whiteCloud.xPos, whiteCloud.yPos, whiteCloud.size, whiteCl
 }
 }
 
-// function chuckmeetCloud() {
-//       for (var i = 0; i < state.clouds.length; i = i + 1) {
-//         var cloud = state.clouds[i];
-//         console.log(cloud.yPos);
-//         if (cloud.yPos <= state.Chuck.yPos + state.Chuck.size &&
-//           state.Chuck.yPos <= cloud.yPos + cloud.size &&
-//           cloud.xPos <= state.Chuck.xPos + state.Chuck.size &&
-//           state.Chuck.xPos <= cloud.xPos + cloud.size){
-//             console.log("meet")
-//           }
-//         }
-//       }
+function chuckmeetCloud() {
+      for (var i = 0; i < state.clouds.length; i = i + 1) {
+        var cloud = state.clouds[i];
+        if (cloud.yPos <= state.chuck.yPos + state.chuck.size &&
+          state.chuck.yPos <= cloud.yPos + cloud.size &&
+          cloud.xPos <= state.chuck.xPos + state.chuck.size &&
+          state.chuck.xPos <= cloud.xPos + cloud.size){
+            console.log("meet");
+          }
+        }
+      }
 
   function animate() {
     drawBackground();
     drawCloud();
     drawCharacter();
-    // chuckmeetCloud();
+    chuckmeetCloud();
   }
     animate();
    setInterval(animate, 40);
