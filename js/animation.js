@@ -31,6 +31,8 @@ gameMode: {
     falseButton: false,
     noClouds: false,
   },
+  score:[],
+  runningscore:0,
 };
 
 // Question page
