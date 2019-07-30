@@ -114,25 +114,6 @@ function drawCharacter(){
 function drawCloud(){
 var clouds = document.querySelector("#Cloud");
 for (var i = 0; i < state.clouds.length; i = i + 1) {
-
-function drawCloud() {
- var cloud = document.querySelector("#Cloud");
- ctx.drawImage(cloud,state.cloud.xPos,state.cloud.yPos,state.cloud.size, state.cloud.size);
- console.log("cloud");
-};
-
-function drawCloud2() {
- var cloud2 = document.querySelector("#Cloud");
- ctx.drawImage(cloud2,state.cloud2.xPos,state.cloud2.yPos,state.cloud2.size, state.cloud2.size);
- console.log("cloud2");
-};
-
-function drawCloud3() {
- var cloud3 = document.querySelector("#Cloud");
- ctx.drawImage(cloud3,state.cloud3.xPos,state.cloud3.yPos,state.cloud3.size, state.cloud3.size);
- console.log("cloud3");
-};
-
     var whiteCloud = state.clouds[i];
 ctx.drawImage(clouds, whiteCloud.xPos, whiteCloud.yPos, whiteCloud.size, whiteCloud.size)
 }
@@ -198,7 +179,7 @@ function chuckmeetCloud() {
 
       function drawScore(){
         ctx.fillStyle = "black";
-        ctx.font = "italic bold 35pt Tahoma"; //set the font name and font size
+        ctx.font = "italic bold 35pt Abel"; //set the font name and font size
         ctx.fillText("Score:" + state.runningscore, 20, 40);
         var c = document.getElementById("myCanvas");
 
@@ -236,3 +217,19 @@ window.addEventListener("keydown", function (event) {
         state.chuck.xPos = state.chuck.xPos + 12;
       }
     });
+
+  canvas.addEventListener('click', function(event) {
+  	var sc = document.getElementById("canvas");
+  	var xClick = event.x + window.scrollX - sc.offsetLeft;
+  	var yClick = event.y + window.scrollY - sc.offsetTop;
+
+  	for(var i = 0; i < state.buttons.length; i = i + 1){
+  		var button = state.buttons[i];
+  		if (xClick > button.x &&
+  		    xClick < button.x + button.width &&
+  		    yClick > button.y &&
+  		    yClick < button.y + button.height) {
+
+      if (button == state.touchedCloud.correctAnswer) {
+          state.runningscore += 10;
+        }}}})
