@@ -14,9 +14,9 @@ chuck:{
   yPos:500,
   size: 50,
 },
-<<<<<<< Updated upstream
+
 clouds:[],
-=======
+
 cloud: {
   xPos:100,
   yPos:350,
@@ -52,10 +52,10 @@ gameMode: {
   noButton: false,
   noCoins: false,
 },
-coins: [],
- runningscore:0,
->>>>>>> Stashed changes
+score: [],
+runningscore:0,
 };
+
 
 var cloud1 = {
   xPos:100,
@@ -100,11 +100,11 @@ function drawCharacter(){
   ctx.drawImage(character,state.chuck.xPos,state.chuck.yPos,state.chuck.size, state.chuck.size);
 }
 
-<<<<<<< Updated upstream
+
 function drawCloud(){
 var clouds = document.querySelector("#Cloud");
 for (var i = 0; i < state.clouds.length; i = i + 1) {
-=======
+
 function drawCloud() {
  var cloud = document.querySelector("#Cloud");
  ctx.drawImage(cloud,state.cloud.xPos,state.cloud.yPos,state.cloud.size, state.cloud.size);
@@ -122,7 +122,6 @@ function drawCloud3() {
  ctx.drawImage(cloud3,state.cloud3.xPos,state.cloud3.yPos,state.cloud3.size, state.cloud3.size);
  console.log("cloud3");
 };
->>>>>>> Stashed changes
 
     var whiteCloud = state.clouds[i];
 ctx.drawImage(clouds, whiteCloud.xPos, whiteCloud.yPos, whiteCloud.size, whiteCloud.size)
@@ -140,12 +139,21 @@ function chuckmeetCloud() {
           }
         }
       }
+      function drawScore(){
+        ctx.fillStyle = "black";
+        ctx.font = "italic bold 35pt Tahoma"; //set the font name and font size
+        ctx.fillText("Score:" + state.runningscore, 20, 40);
+        var c = document.getElementById("myCanvas");
+
+
+      }
 
   function animate() {
     drawBackground();
     drawCloud();
     drawCharacter();
     chuckmeetCloud();
+    drawScore();
   }
     animate();
    setInterval(animate, 40);
@@ -153,10 +161,7 @@ function chuckmeetCloud() {
 
 
 //StartGameEngine(canvas, config, runGame);
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 
 window.addEventListener("keydown", function (event) {
   console.log("pressed a key: " + event.key);
