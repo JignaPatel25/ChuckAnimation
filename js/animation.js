@@ -134,7 +134,7 @@ function drawCloud3() {
 };
 
     var whiteCloud = state.clouds[i];
-ctx.drawImage(clouds, whiteCloud.xPos, whiteCloud.yPos, whiteCloud.size, whiteCloud.size)
+ctx.drawImage(clouds, whiteCloud.xPos, whiteCloud.yPos, whiteCloud.size, whiteCloud.size);
 }
 }
 
