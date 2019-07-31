@@ -97,7 +97,6 @@ header{
 .start-btn{
   -webkit-animation: shake 0.8s ease-in-out 0.8s infinite alternate;
 }
-
 @-webkit-keyframes shake {
 from {
   -webkit-transform: rotate(4deg);
