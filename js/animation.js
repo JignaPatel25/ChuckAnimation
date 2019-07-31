@@ -37,6 +37,11 @@ runningscore:0
 
 };
 
+// Sounds
+var correctSound = document.getElementById("correctSound");
+var incorrectSound = document.getElementById("incorrectSound");
+
+
 // Question page
 
 var cloud1 = {
@@ -185,7 +190,10 @@ function chuckmeetCloud() {
                   console.log(state.gameMode.answered)
             if (button == state.touchedCloud.correctAnswer) {
                 state.runningscore += 10;
-              }
+                correctSound.play();
+            } else {
+              incorrectSound.play();
+            }
 
       }}})
 
