@@ -41,17 +41,6 @@ nav{
   padding-right: 20px;
 }
 
-.home:hover{
-  position:relative;
-    top:-25px;
-    left:-35px;
-    width:100px;
-    height:auto;
-    display:block;
-    z-index:100;
-}
-
-
 .enter-btn{
   width: 300px;
   display: block;
