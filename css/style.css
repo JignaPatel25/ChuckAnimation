@@ -13,12 +13,20 @@ h1{
 
 
 h2{
-  color: white; font-size: 2.5em;
+  color: white; font-size: 2.8em;
   font-family: 'Londrina Shadow', cursive;
   padding: 20px 0px 20px 30px;
   text-align: left;
   background-color:
 }
+
+h3{
+  color: #0075A3; font-size: 3.5em;
+  font-family: 'Londrina Shadow', cursive;
+  padding-top: 80px;
+  text-align: center;
+}
+
 
 nav{
   background-color: #0FB4F7;
@@ -31,19 +39,40 @@ nav{
   height: 60px;
   padding-top: 10px;
   padding-right: 20px;
+}
 
-
+.home:hover{
+  position:relative;
+    top:-25px;
+    left:-35px;
+    width:100px;
+    height:auto;
+    display:block;
+    z-index:100;
 }
 
 
 .enter-btn{
-  float; clear;
   width: 300px;
   display: block;
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding-top: 80px;
+}
+
+.enter-btn{
+  -webkit-animation: shake 0.5s ease-in-out 0.5s infinite alternate;
+}
+
+@-webkit-keyframes shake {
+from {
+  -webkit-transform: rotate(10deg);
+}
+to {
+ -webkit-transform-origin:center center;
+ -webkit-transform: rotate(-10deg);
+}
 }
 
 header{
@@ -56,12 +85,27 @@ header{
 
 
 .start-btn{
-  width: 300px;
+  width: 250px;
   display: block;
-  display: block;
+  padding-top: 260px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 240px;
+  padding-top: 90px;
+  padding-right:600px;
+}
+
+.start-btn{
+  -webkit-animation: shake 0.8s ease-in-out 0.8s infinite alternate;
+}
+
+@-webkit-keyframes shake {
+from {
+  -webkit-transform: rotate(4deg);
+}
+to {
+ -webkit-transform-origin:center center;
+ -webkit-transform: rotate(-4deg);
+}
 }
 
 main{

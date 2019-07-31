@@ -62,7 +62,7 @@ var cloud2 = {
 }
 
 var cloud3 = {
-  xPos:100,
+  xPos:200,
   yPos:80,
   size:170,
   question1:"You can access a cloud environment",
@@ -111,7 +111,7 @@ function drawCloud(){
 var clouds = document.querySelector("#Cloud");
 for (var i = 0; i < state.clouds.length; i = i + 1) {
     var whiteCloud = state.clouds[i];
-ctx.drawImage(clouds, whiteCloud.xPos, whiteCloud.yPos, whiteCloud.size, whiteCloud.size)
+ctx.drawImage(clouds, whiteCloud.xPos, whiteCloud.yPos, whiteCloud.size, whiteCloud.size);
 }
 }
 
