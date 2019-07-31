@@ -62,7 +62,7 @@ var cloud2 = {
 }
 
 var cloud3 = {
-  xPos:100,
+  xPos:200,
   yPos:80,
   size:170,
   // x: Math.floor(Math.random()*(3*canvas.width/10))+(canvas.width/10),
