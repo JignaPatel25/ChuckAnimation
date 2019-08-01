@@ -40,6 +40,9 @@ runningscore:0
 // Sounds
 var correctSound = document.getElementById("correctSound");
 var incorrectSound = document.getElementById("incorrectSound");
+var touchedCloudSound =document.getElementById("touchedCloudSound");
+// var woohoo =document.getElementById("woohoo");
+// var startbtnSound = document.getElementById('startbtnSound');
 
 
 // Question page
@@ -58,7 +61,7 @@ var cloud1 = {
 var cloud2 = {
   xPos:750,
   yPos:250,
-  size:170,
+  size:120,
   question1:"Access to the cloud is",
   question2: "usually cheaper than a traditional",
   question3: "desktop computer.",
@@ -69,7 +72,7 @@ var cloud2 = {
 var cloud3 = {
   xPos:200,
   yPos:80,
-  size:170,
+  size:150,
   question1:"You can access a cloud environment",
   question2: "from anywhere in the world",
   question3: "as you have an Internet connection.",
@@ -130,7 +133,8 @@ function chuckmeetCloud() {
           state.chuck.xPos <= cloud.xPos + cloud.size){
 		      state.touchedCloud = cloud;
 		      state.gameMode.question = true;
-		      state.clouds.splice(i,1)
+		      state.clouds.splice(i,1);
+          touchedCloudSound.play();
         }
       }
     }
@@ -219,7 +223,8 @@ function homeButton(){
           function leaderBoard(){
             if(state.gameMode.noClouds){
 console.log("hi")
-window.location.href = "EndPage.html"
+window.location.href = "EndPage.html";
+// woohoo.play();
 }
           }
 
