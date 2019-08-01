@@ -4,15 +4,15 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var button1 = {
-  x: 300,
-  y: 300,
+  x: canvas.width/2,
+  y: canvas.height/3,
   width: 140,
   height: 70,
 }
 
 var button2 = {
-  x: 500,
-  y: 300,
+  x: canvas.width/4,
+  y: canvas.height/3,
   width: 140,
   height: 70,
 }
@@ -164,7 +164,7 @@ function chuckmeetCloud() {
         ctx.fillRect(button.x, button.y, button.width, button.height);
 
         ctx.fillStyle = "black";
-        ctx.fillText("True", button.x + 40, button.y + 50);
+        ctx.fillText("True", button.x + 20, button.y + 50);
 
       }
 

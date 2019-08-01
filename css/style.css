@@ -104,6 +104,11 @@ main{
   background-size: cover;
 }
 
+canvas {
+  display:block;
+  margin: 0px auto;
+}
+
 section{
   background-image: url('../images/Intro.jpg');
   height: 100vh;
