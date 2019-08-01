@@ -37,6 +37,11 @@ runningscore:0
 
 };
 
+// Sounds
+var correctSound = document.getElementById("correctSound");
+var incorrectSound = document.getElementById("incorrectSound");
+
+
 // Question page
 
 var cloud1 = {
@@ -68,6 +73,7 @@ var cloud3 = {
   question1:"You can access a cloud environment",
   question2: "from anywhere in the world",
   question3: "as you have an Internet connection.",
+  correctAnswer: state.buttons[0],
   explanation: "#explanation3"
 }
 
@@ -180,19 +186,56 @@ function chuckmeetCloud() {
         		    yClick > button.y &&
         		    yClick < button.y + button.height) {
                   state.gameMode.answered=true;
+                  state.gameMode.question=false;
                   console.log(state.gameMode.answered)
             if (button == state.touchedCloud.correctAnswer) {
                 state.runningscore += 10;
-              }
+                correctSound.play();
+            } else {
+              incorrectSound.play();
+            }
 
       }}})
+
+function homeButton(){
+      canvas.addEventListener("click", function(event) {
+            var xClick = event.x + window.scrollX;
+            var yClick = event.y + window.scrollY;
+
+            if (xClick > 5* canvas.width/ 6 &&
+                xClick < 5* canvas.width/ 6 + 70 &&
+                yClick > canvas.height/10 &&
+                yClick < canvas.height/10 + 70) {
+                console.log("hello");
+                state.gameMode.answered=false;
+              if (state.clouds.length === 0) {
+                state.gameMode.noClouds = true;
+              }
+            }
+              }
+            )
+          }
+
+          function leaderBoard(){
+            if(state.gameMode.noClouds){
+console.log("hi")
+window.location.href = "EndPage.html"
+}
+          }
+
+
 
       function explanationScreen(){
         if(state.gameMode.answered){
           console.log(state.gameMode.answered)
       var explanations = document.querySelector(state.touchedCloud.explanation);
       ctx.drawImage(explanations, 0, 0, canvas.width, canvas.height);
+      var gameReturn= document.querySelector("#home")
+      ctx.drawImage(gameReturn, 5* canvas.width/ 6, canvas.height/10, 70, 70);
+      homeButton();
     }}
+
+
 
       function drawScore(){
         ctx.fillStyle = "black";
@@ -209,6 +252,7 @@ function chuckmeetCloud() {
     questionPage()
     drawScore();
     explanationScreen();
+    leaderBoard();
   }
     animate();
    setInterval(animate, 40);
